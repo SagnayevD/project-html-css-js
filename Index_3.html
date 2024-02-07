@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мое резюме</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            border: 5px solid #333;
+            border-radius: 50%;
+            cursor: pointer; 
+        }
+        p {
+            margin: 10px 0;
+            text-align: center;
+            color: #555;
+        }
+        h2 {
+            color: #333;
+            background: #f5f5f5;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: disc;
+            text-align: left;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+        a {
+            color: #0078d4; 
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="resumeTitle">Сагнаев Даурен Жуматаевич</h1>
+        <img id="resumeImage" src="1.jpg" alt="Ваше фото" width="200" height="200" onclick="checkImage()">
+        <p>Местоположение: Астана, Казахстан</p>
+        <p>Телефон: <a href="tel:+77028828781">+77028828781</a></p>
+        <p>Email: <a href="mailto:sagnayevdauren@gmail.com">sagnayevdauren@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/77028828781">ссылка на WhatsApp</a></p>
+        <p>Telegram: <a href="https://t.me/sagnayevdauren">ссылка на Telegram</a></p>
+        
+        <h2>Образование</h2>
+        <p>В 2018 г. получил диплом бакалавра по специальности «Радиотехника, Электроника, Телекоммуникации» в ЕНУ им. Л.Н. Гумилева.</p>
+        <p>В июле 2020 года получил диплом магистра по специальности «Физика - Образование» в ЕНУ им. Л.Н. Гумилева. </p>
+        <h2>Опыт работы</h2>
+        <p>С июля 2018 года по июнь 2020 года работал инженером в КГУ «ОШ села Кабанбай батыр»</p>
+        <p>С июля 2020 года по настоящее время работаю преподавателем физики и информатики в ОШ села Кабанбай батыр»</p>
+        <h2>Навыки</h2>
+        <ul>
+            <li>Администрирование корпоративной сети</li>
+            <li>Telegram-Bot</li>
+            <li>Parsing</li>
+            <li>Преподавание физики и информатики</li>
+            <li>Тренер по баскетболу</li>
+            <li>Class management</li>
+            <li>Видеомонтаж</li>
+        </ul>
+        <p>Контакты: <a href="main_2.html">связаться со мной</a></p>
+        
+        <button id="changeImageButton" onclick="changeImage()">Сменить изображение</button>
+        <button id="changeBackgroundButton" onclick="changeBackground()">Сменить фон</button>
+        <button id="changeTitleButton" onclick="changeTitle()">Сменить название</button>
+
+        <script>
+            document.getElementById('resumeTitle').addEventListener('click', function() {
+                alert('Вы нажали на заголовок');
+            });
+
+            document.getElementById('resumeTitle').addEventListener('mouseover', function() {
+                alert('Вы на странице Даурена Сагнаева');
+            });
+
+            document.addEventListener('keypress', function(event) {
+                alert('Вы нажали клавишу: ' + event.key);
+            });
+
+            function changeImage() {
+                document.getElementById('resumeImage').src = '2.jpg';
+            }
+
+            function changeBackground() {
+                var newBackgroundColor = prompt('Введите новый цвет фона:');
+                if (newBackgroundColor !== null && newBackgroundColor !== '') {
+                    document.getElementById('container').style.backgroundColor = newBackgroundColor;
+                } else {
+                    alert('Вы отменили ввод цвета фона.');
+                }
+            }
+
+            function changeTitle() {
+                var newTitle = prompt('Введите новое название:');
+                if (newTitle !== null && newTitle !== '') {
+                    document.getElementById('resumeTitle').innerText = newTitle;
+                } else {
+                    alert('Вы отменили ввод нового названия.');
+                }
+            }
+
+            function checkImage() {
+                var currentImage = document.getElementById('resumeImage').src;
+                if (currentImage.includes('1.jpg')) {
+                    alert('Даурен на игре в АБЛ');
+                } else if (currentImage.includes('2.jpg')) {
+                    alert('THE GRAND CANYON');
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
